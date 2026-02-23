@@ -52,11 +52,9 @@ export default function App() {
     const openFormForAdd = () => { setActiveEmployee(null); setIsFormModalOpen(true); };
     const openFormForEdit = (emp: Employee) => { setActiveEmployee(emp); setIsFormModalOpen(true); };
 
-    // ==========================================
-    // DATA PIPELINE: Filter -> Sort -> Paginate
-    // ==========================================
     
-    // 1. Filter
+    
+    // Filter
     const filteredEmployees = useMemo(() => {
         return employees.filter(emp => 
         emp.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
@@ -65,7 +63,7 @@ export default function App() {
         );
     }, [employees, searchTerm]);
 
-    // 2. Sort
+    // Sort
     const sortedEmployees = useMemo(() => {
         if (!sortConfig) return filteredEmployees;
         return [...filteredEmployees].sort((a, b) => {
@@ -77,16 +75,12 @@ export default function App() {
         });
     }, [filteredEmployees, sortConfig]);
 
-    // 3. Paginate
+    // Paginate
     const totalPages = Math.ceil(sortedEmployees.length / itemsPerPage);
     const paginatedEmployees = sortedEmployees.slice(
         (currentPage - 1) * itemsPerPage, 
         currentPage * itemsPerPage
     );
-
-    // ==========================================
-    // UTILITIES
-    // ==========================================
 
     const handleSort = (key: keyof Employee) => {
         let direction: 'asc' | 'desc' = 'asc';
@@ -116,10 +110,7 @@ export default function App() {
         link.click();
         document.body.removeChild(link);
     };
-
-    // ==========================================
-    // RENDER
-    // ==========================================
+    
     return (
         <div className="min-h-screen bg-gray-50 p-8 relative">
         <div className="max-w-6xl mx-auto">
