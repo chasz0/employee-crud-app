@@ -39,7 +39,7 @@ export default function InfoModal({ isOpen, onClose }: Props) {
                         </div>
                     </div>
 
-                    <a href="https://github.com/your-username/employee-directory" target="_blank" rel="noreferrer" className="block w-full text-center bg-gray-900 text-white font-medium py-3 rounded-xl hover:bg-gray-800 transition-colors shadow-md">
+                    <a href="https://github.com/chasz0/employee-crud-app" target="_blank" rel="noreferrer" className="block w-full text-center bg-gray-900 text-white font-medium py-3 rounded-xl hover:bg-gray-800 transition-colors shadow-md">
                         🔗 View GitHub Repository
                     </a>
 
