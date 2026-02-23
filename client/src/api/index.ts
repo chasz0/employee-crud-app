@@ -1,6 +1,6 @@
 import type { Employee, Department } from '../types.tsx';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://employee-crud-app-aeei.onrender.com/api';
 
 export const api = {
     getEmployees: async (): Promise<Employee[]> => {
